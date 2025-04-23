@@ -1,0 +1,266 @@
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+body{
+  font-size: 1.5rem;
+  font-family: "Poppins", "sans-serif";
+  background-image: url(Images/Bubble\ back.jpg);
+  /* background: #F7F7F7;   */
+  background-size: cover;
+  background-repeat: no-repeat; 
+  /* color: rgb(23, 91, 158); */
+  color: darkblue;
+}
+@keyframes appear {
+  from {
+    opacity: 0;
+    scale: 0.3; 
+  }
+  to {
+    opacity: 1;
+    scale: 1;
+  }
+}
+.a{
+  animation: appear linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
+}
+.header{
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  padding: 25px 6%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  color:rgb(23, 91, 158);
+}
+.header h1{
+  color: lightblue;
+}
+.navbar ul{
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+}
+.navbar ul a{
+  text-decoration: none;
+  color: lightblue;
+}
+.navbar li{
+  margin-left: 50px;
+  padding: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.5s ease;
+}
+.navbar a:hover{
+  color: blue;
+  transform: scale(1.5, 1.5);
+}
+.navbar .active{
+  color: blue;
+}
+.section{
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  padding: 60px 9% 0;
+}
+.section .info{
+  width: 60%;
+} 
+.section h1{
+  font-size: 55px;
+}
+.section h2{
+  font-size: 35px;
+  margin-top: -10px;
+}
+.social-btn{
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
+}
+.social-btn .btn{
+display: inline-block;
+padding: 10px 30px;
+background-color: rgb(23, 120, 216);
+border: 2px solid rgb(23, 120, 216);
+box-shadow: 0 0 10px rgb(23, 120, 216);
+border-radius: 40px;
+font-weight: 600;
+font-size: 16px;
+cursor: pointer;
+transition: .5s;
+}
+.btn:hover{
+  background: transparent;
+  color: rgb(23, 120, 216);
+  box-shadow: none;
+}
+.social-btn .social{
+  margin-left: 10px;
+}
+.social-btn .social a{
+  display: inline-flex;
+  padding: 8px;
+  margin: 0 10px;
+  text-decoration: none;
+  font-size: 25px;
+  border: 2px solid blue;
+  border-radius: 50%;
+  transition: .5s;
+}
+.social-btn .social a:hover{
+  background-color: blue;
+  color: white;
+  box-shadow: 0 0 10px blue;
+}
+.image .image-box{
+  position: relative;
+  width: 32vw;
+  height: 32vw;
+  border-radius: 30% 70% 62% 38% / 49% 26% 74% 51% ;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.image .image-box::before, 
+.image .image-box::after{
+  content: "";
+  position: absolute;
+  width: 400px;
+  height: 300px;
+  background: conic-gradient(transparent, transparent, transparent, blue);
+  transform: rotate(0deg);
+  animation: rotate-border 10s linear infinite;
+}
+.image .image-box::after{
+  animation-delay: -5s;
+}
+@keyframes rotate-border{
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.image .image-box .image-item{
+  position: relative;
+  width: 300px;
+  height: 288px;
+   background: rgb(90, 90, 240); 
+  border-radius: 30% 70% 62% 38% / 49% 26% 74% 51%;
+  border: .1px solid rgb(83, 83, 83);
+  display: flex;
+  justify-content: center;
+  z-index: 1;
+  overflow: hidden;
+
+}
+.image .image-box .image-item img{
+  position: absolute;
+  display: block;
+  width: 170%;
+  object-fit: cover; 
+}
+.about-me{
+  display: block;
+  width: 100%;
+  height: 70vh;
+  border-top: 1px solid rgb(0, 77, 128);
+  padding: 15px;
+}
+.about-me h2{
+  text-align: center;
+  margin-top: 15px;
+  padding: 10px;
+}
+.about-me p{
+  font-size: 20px;
+  text-align: center;
+}
+.my-projects{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  row-gap: 5px;
+  column-gap: 5px;
+}
+.projects h2{
+  text-align: center;
+  padding: 30px 10px;
+}
+.my-projects b{
+  width: 100%;
+}
+.my-projects img{
+  width: 400px;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  padding: 10px;
+  border-radius: 50%;
+  object-fit: contain;
+  border: .5px solid lightblue;
+
+}
+.my-projects img:hover{
+  width: 450px;
+}
+.my-projects p{
+  text-align: center;
+  font-size: 1.5rem;
+}
+.contact{
+  width: 100%;
+  height: 50vh;
+  padding: 10px;
+  margin-bottom: 50px;
+  margin-top: 50px;
+}
+.contact-info{
+  display: flex;
+  flex-direction: column;
+}
+.contact-info input{
+  width: 300px;
+  height: 30px
+}
+.contact h2{
+  text-align: center;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.contact button{
+  display: inline-block;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 10px 20px;
+  margin-top: 15px;
+  background-color: rgb(23, 120, 216);
+  border: 2px solid rgb(23, 120, 216);
+  box-shadow: 0 0 10px rgb(23, 120, 216);
+  border-radius: 40px;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: .5s;
+}
+.contact button:hover{
+  background: transparent;
+  color: rgb(23, 120, 216);
+  box-shadow: none;
+}
+.footer{
+  color: lightblue;
+  text-align: center;
+}
